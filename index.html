@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Task 1</title>
+</head>
+<body>
+    <div id="name">Made by Jayesh Badgujar</div>
+    <div class="container">
+     
+        <div class="calculator">
+            <input  placeholder="Enter no" id="input">
+            <button id="AC" onclick="Clear()">AC</button>
+            <button id="X" onclick="del()">X</button>
+            <button id="module" onclick="display('%')">%</button>
+            <button id="divide" onclick="display('/')">/</button>
+            <button id="seven" onclick="display('7')">7</button>
+            <button id="eight" onclick="display('8')">8</button>
+            <button id="nine" onclick="display('9')">9</button>
+            <button id="cut" onclick="display('*')">x</button>
+            <button id="four" onclick="display('4')">4</button>
+            <button id="five" onclick="display('5')">5</button>
+            <button id="six" onclick="display('6')">6</button>
+            <button id="minus" onclick="display('-')">-</button>
+            <button id="one" onclick="display('1')">1</button>
+            <button id="two" onclick="display('2')">2</button>
+            <button id="three" onclick="display('3')">3</button>
+            <button id="plus" onclick="display('+')">+</button>
+            <button id="zero" onclick="display('0')">0</button>
+            <button id="dot" onclick="display('.')">.</button>
+            <button id="ans" onclick="cal()">=</button>
+            
+        </div>
+      
+    </div>
+   
+    
+    <script>
+        let seen=document.getElementById("input");
+        function display(num){
+            seen.value+=num;
+        }
+        function cal(){
+            try{
+
+                seen.value=eval(seen.value);
+                
+
+            }catch(err){
+                alert("Invalid value");
+            }
+            seen.value.round(2);
+        }
+        function Clear(){
+            seen.value="";
+        }
+        function del(){
+            seen.value=seen.value.slice(0,-1);
+        }
+    </script>
+    
+</body>
+</html>
